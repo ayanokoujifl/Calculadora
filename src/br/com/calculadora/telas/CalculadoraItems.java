@@ -13,6 +13,17 @@ import javax.swing.JOptionPane;
  */
 public class CalculadoraItems extends javax.swing.JFrame {
 
+    private String valorHora;
+
+    public String getValorHora() {
+        return valorHora;
+    }
+
+    public void setValorHora(String valorHora) {
+        this.valorHora = valorHora;
+    }
+    
+    
     /**
      * Creates new form CalculadoraItems
      */
@@ -244,17 +255,17 @@ public class CalculadoraItems extends javax.swing.JFrame {
 
             txtHorasTotais.setText(String.valueOf(horasTotais));
 
-            var orcamentoDTO = new OrcamentoDTO();
+            OrcamentoDTO orcamentoDTO = new OrcamentoDTO();
             orcamentoDTO.setTotalHoras(horasTotais);
 
             int continuar = JOptionPane.showConfirmDialog(null, horas + " horas adicionadas. Deseja selecionar mais itens?", "Atenção", JOptionPane.YES_NO_OPTION);
             if (continuar == JOptionPane.NO_OPTION) {
                 JOptionPane.showMessageDialog(null, "Serão gastas em média " + horasTotais + " horas para realizar o programa.");
 
-                var orcamento = new Orcamento();
+                Orcamento orcamento = new Orcamento();
                 orcamento.setVisible(true);
                 orcamento.txtHorasTotais.setText(String.valueOf(orcamentoDTO.getTotalHoras()));
-                orcamento.txtValorHora.setText(String.valueOf(orcamentoDTO.getValorHora()));
+                orcamento.txtValorHora.setText(valorHora);
                 this.dispose();
 
             }

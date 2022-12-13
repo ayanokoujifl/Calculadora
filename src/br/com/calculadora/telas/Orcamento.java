@@ -187,7 +187,7 @@ public class Orcamento extends javax.swing.JFrame {
         String horasTotaisStr = txtHorasTotais.getText();
         OrcamentoDTO objorcamentodto = new OrcamentoDTO();
 
-        if (valorHoraStr.isBlank() || horasTotaisStr.isBlank()) {
+        if (valorHoraStr.isEmpty()|| horasTotaisStr.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Preencha todos os campos!");
         } else {
             try {

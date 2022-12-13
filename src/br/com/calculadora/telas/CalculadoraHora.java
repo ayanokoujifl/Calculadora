@@ -192,7 +192,7 @@ public class CalculadoraHora extends javax.swing.JFrame {
                 int intSalario = Integer.parseInt(salario);
 
                 int valorHora = intSalario / (20 * intHora);
-                var orcamentoDTO = new OrcamentoDTO();
+                OrcamentoDTO orcamentoDTO = new OrcamentoDTO();
                 
                 txtInfoValorHora.setText(String.valueOf(valorHora));
                 orcamentoDTO.setValorHora(valorHora);
@@ -202,9 +202,11 @@ public class CalculadoraHora extends javax.swing.JFrame {
                 CalculadoraItems calculadoraitems = new CalculadoraItems();
                 calculadoraitems.setVisible(true);
                 
-                var orcamento = new Orcamento();
+                Orcamento orcamento = new Orcamento();
                 String test = txtInfoValorHora.getText();
                 orcamento.txtValorHora.setText(test);
+                calculadoraitems.setValorHora(txtInfoValorHora.getText());
+             
                 this.dispose();
 
             }
